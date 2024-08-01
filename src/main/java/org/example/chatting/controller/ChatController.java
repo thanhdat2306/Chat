@@ -15,13 +15,11 @@ public class ChatController {
 
     @Autowired
     private ChatService chatService;
-
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/public")
     public ChatMessage sendMessage(ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor) {
         return chatService.saveMessage(chatMessage.getUsername(), chatMessage.getContent());
     }
-
     @GetMapping("/chat")
     public String chat(Model model) {
         return "chat";
