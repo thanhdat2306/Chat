@@ -54,7 +54,7 @@ This project builds a real-time multi-user chat application using Spring Boot, T
 2. Input a message in the message field and press Enter or click the Send button to send the message.
 3. View other users' messages in real-time.
 
-## 프로젝트 구조
+## Project struture
 
 - `src/main/java/com/example/chat` - Main application source code
 - `src/main/resources/templates` - Thymeleaf templates
