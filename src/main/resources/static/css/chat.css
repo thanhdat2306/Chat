@@ -24,7 +24,7 @@
     max-width: 60%;
 }
 
-/* 자신의 메시지 스타일 */
+/* your message style */
 .own-message {
     text-align: right;
     margin: 5px 0;
@@ -34,7 +34,7 @@
     align-self: flex-end;
 }
 
-/* 다른 사용자의 메시지 스타일 */
+/* Other user message style */
 .other-message {
     text-align: left;
     margin: 5px 0;
