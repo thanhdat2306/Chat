@@ -1,7 +1,7 @@
 var stompClient = null;
 var username = null;
 
-// 사용자가 채팅에 연결할 때 호출되는 함수
+// Function called when user connects to chat
 function connect() {
     username = $("#username").val(); // 사용자 이름 저장
     var socket = new SockJS('/ws');
@@ -14,7 +14,7 @@ function connect() {
         });
     });
 
-    // 메시지 입력 필드에 엔터키 이벤트 리스너 추가
+    // add enter key to event listener to input field
     $("#message").on("keyup", function(event) {
         if (event.key === "Enter" || event.keyCode === 13) {
             sendMessage();
@@ -22,7 +22,7 @@ function connect() {
     });
 }
 
-// 사용자가 메시지를 전송할 때 호출되는 함수
+// Function called when user enter a message
 function sendMessage() {
     var messageContent = $("#message").val();
     if(messageContent && stompClient) {
@@ -35,7 +35,7 @@ function sendMessage() {
     }
 }
 
-// 새로운 채팅 메시지를 화면에 표시하는 함수
+// Function to display new chat message 
 function showMessage(message) {
     var isOwnMessage = message.username === username;
     var messageElement = $("<li>").addClass(isOwnMessage ? "own-message" : "other-message");
