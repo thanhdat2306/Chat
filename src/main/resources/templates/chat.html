@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chat Room</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/chat.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="/js/chat.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <div id="usernameForm" class="text-center">
+        <h2>Enter your name to join the chat</h2>
+        <input type="text" id="username" class="form-control mb-2" placeholder="Enter your name"/>
+        <button class="btn btn-primary" onclick="connect()">Connect</button>
+    </div>
+    <div id="chatRoom" class="card" style="display:none;">
+        <div class="card-header">
+            <h5>Chat Room</h5>
+        </div>
+        <div class="card-body">
+            <ul id="messages" class="list-unstyled"></ul>
+        </div>
+        <div class="card-footer">
+            <div id="messageForm" class="input-group">
+                <input type="text" id="message" class="form-control" placeholder="Enter your message"/>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

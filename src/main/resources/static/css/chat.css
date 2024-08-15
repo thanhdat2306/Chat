@@ -1,0 +1,45 @@
+#chatRoom {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#messageForm {
+    display: flex;
+}
+
+#message {
+    flex: 1;
+}
+
+.message-wrapper {
+    display: inline-block;
+    max-width: 60%;
+}
+
+/* 자신의 메시지 스타일 */
+.own-message {
+    text-align: right;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #d1ffd6;
+    border-radius: 10px;
+    align-self: flex-end;
+}
+
+/* 다른 사용자의 메시지 스타일 */
+.other-message {
+    text-align: left;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    align-self: flex-start;
+}
