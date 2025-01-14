@@ -1,9 +1,9 @@
 var stompClient = null;
 var username = null;
 
-// 사용자가 채팅에 연결할 때 호출되는 함수
+// Hàm được gọi khi người dùng kết nối với cuộc trò chuyện
 function connect() {
-    username = $("#username").val(); // 사용자 이름 저장
+    username = $("#username").val(); // Lưu tên người dùng
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function(frame) {
@@ -14,7 +14,7 @@ function connect() {
         });
     });
 
-    // 메시지 입력 필드에 엔터키 이벤트 리스너 추가
+    // Thêm trình xử lý sự kiện quan trọng vào trường nhập tin nhắn
     $("#message").on("keyup", function(event) {
         if (event.key === "Enter" || event.keyCode === 13) {
             sendMessage();
@@ -22,7 +22,7 @@ function connect() {
     });
 }
 
-// 사용자가 메시지를 전송할 때 호출되는 함수
+// Hàm được gọi khi người dùng gửi tin nhắn
 function sendMessage() {
     var messageContent = $("#message").val();
     if(messageContent && stompClient) {
@@ -35,7 +35,7 @@ function sendMessage() {
     }
 }
 
-// 새로운 채팅 메시지를 화면에 표시하는 함수
+// Chức năng hiển thị tin nhắn chat mới trên màn hình
 function showMessage(message) {
     var isOwnMessage = message.username === username;
     var messageElement = $("<li>").addClass(isOwnMessage ? "own-message" : "other-message");
